@@ -2,11 +2,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from './../pages/Home'
-import Recommend from './../pages/Recommend'
-import Search from './../pages/Search'
-import Chat from './../pages/Chat'
-import Me from './../pages/Me'
+import Home from '../pages/Home/Home'
+import Recommend from '../pages/Recommend/Recommend'
+import Search from '../pages/Search/Search'
+import Chat from '../pages/Chat/Chat'
+import Me from '../pages/Me/Me'
+
+import Hot from '../pages/Home/Children/Hot/Hot'
+import Clothing from '../pages/Home/Children/Clothing'
+import Electric from '../pages/Home/Children/Electric'
+import Food from '../pages/Home/Children/Food'
+import Goods from '../pages/Home/Children/Goods'
+import Baby from '../pages/Home/Children/Baby'
+import Shoes from '../pages/Home/Children/Shoes'
+import Man from '../pages/Home/Children/Man'
+import Underwear from '../pages/Home/Children/Underwear'
 
 
 //2.声明使用
@@ -19,11 +29,19 @@ export default new VueRouter({
   routes:[
     {
       path:'/home',
-      component:Home
-    },
-    {
-      path:'/home',
-      component:Home
+      component:Home,
+      children:[
+        {path:'hot',component:Hot},
+        {path:'clothing',component:Clothing},
+        {path:'electric',component:Electric},
+        {path:'food',component:Food},
+        {path:'goods',component:Goods},
+        {path:'baby',component:Baby},
+        {path:'shoes',component:Shoes},
+        {path:'underwear',component:Underwear},
+        {path:'man',component:Man},
+        {path:'/home',redirect: '/home/hot'}
+      ]
     },
     {
       path:'/recommend',
