@@ -10,7 +10,7 @@ export default function ajax(url = '', params = {}, type = 'GET') {
       let paramsStr = '';
       Object.keys(params).forEach(key => {
         paramsStr += key + '=' + params[key] + '&'
-      })
+      });
       //2.2.过滤最后的&
       if (paramsStr !== '') {
         paramsStr = paramsStr.substr(0, paramsStr.lastIndexOf('&'))

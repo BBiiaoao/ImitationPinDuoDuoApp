@@ -32,13 +32,23 @@
   import HotNav from './HotNav'
   import HotShopList from './HotShopList'
 
+  import {mapState} from 'vuex'
+
   export default {
     name: "Hot",
     components:{
       HotNav,
       HotShopList
     },
+    computed:{
+
+  },
     mounted() {
+      //1.请求轮播图的数据
+      this.$store.dispatch('reqHomeCasual');
+
+
+
       //创建swiper的实例
       new Swiper ('.swiper-container', {
         autoplay:true,
