@@ -18,14 +18,14 @@ export default function ajax(url = '', params = {}, type = 'GET') {
       //2.3.完整路径
       url += '?' + paramsStr;
       //2.4.发送get请求
-      promise=axios.get(url);
+      promise = axios.get(url);
     } else if ('POST' === type) {
-      promise=axios.post(url,params);
+      promise = axios.post(url, params);
     }
     //3.返回请求的结果
-    promise.then(response=>{
+    promise.then((response) => {
       resolve(response.data);
-    }).catch(error=>{
+    }).catch((error) => {
       reject(error);
     })
   })
