@@ -73,6 +73,7 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   export default {
     name: "HotNav",
     data(){
@@ -102,6 +103,10 @@
       }
     },
     mounted() {
+      //1.请求首页导航的数据
+      this.$store.dispatch('reqHomeNav');
+
+
       this.getBottomBarWidth();
       this.bindEvent();
     },

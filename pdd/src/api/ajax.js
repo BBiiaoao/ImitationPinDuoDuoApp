@@ -5,7 +5,7 @@ export default function ajax(url = '', params = {}, type = 'GET') {
   let promise;
   return new Promise((resolve, reject) => {
     //2.判断请求的方式
-    if ('Get' === type) {
+    if ('GET' === type) {
       //2.1.拼接请求字符串
       let paramsStr = '';
       Object.keys(params).forEach(key => {

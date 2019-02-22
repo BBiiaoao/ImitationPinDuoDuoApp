@@ -42,18 +42,21 @@
     mounted() {
       //1.请求轮播图的数据
       this.$store.dispatch('reqHomeCasual');
-
-
-
-      //创建swiper的实例
-      new Swiper ('.swiper-container', {
-        autoplay:true,
-        loop: true, // 循环模式选项
-        // 如果需要分页器
-        pagination: {
-          el: '.swiper-pagination',
-        }
-      })
+    },
+    watch:{
+      homecasual(){
+        this.$nextTick(()=>{
+          //创建swiper的实例
+          new Swiper ('.swiper-container', {
+            autoplay:true,
+            loop: true, // 循环模式选项
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            }
+          })
+        })
+      }
     }
   }
 </script>
