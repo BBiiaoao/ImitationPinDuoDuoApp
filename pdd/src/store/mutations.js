@@ -1,6 +1,8 @@
 import {
   HOME_CASUAL,
-  HOME_NAV
+  HOME_NAV,
+  HOME_SHOP_LIST,
+  RECOMMEND_SHOP_LIST
 } from "./mutation-ytpe";
 
 export default {
@@ -10,4 +12,10 @@ export default {
   [HOME_NAV](state,{homenav}){
     state.homenav=homenav
   },
+  [HOME_SHOP_LIST](state,{homeshoplist}){
+    state.homeshoplist=homeshoplist
+  },
+  [RECOMMEND_SHOP_LIST](state,{recommendshoplist}){
+    state.recommendshoplist=recommendshoplist
+  }
 }

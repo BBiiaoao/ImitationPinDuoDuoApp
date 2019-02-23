@@ -1,67 +1,11 @@
 <template>
   <div class="hot-nav">
     <!--滚动区域-->
-    <div class="hot-nav-content">
+    <div class="hot-nav-content" v-if="homenav.length>0">
       <div class="nav-content-inner">
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-        <img src="./../../imgs/nav/nav_icon01.png" alt="">
-        <span>限时秒杀</span>
-      </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a href="" class="inner-item">
-          <img src="./../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
+        <a href="" class="inner-item" v-for="(nav,index) in homenav" :key="index">
+          <img :src="nav.iconurl" alt="">
+          <span>{{nav.icontitle}}</span>
         </a>
       </div>
     </div>
@@ -95,6 +39,8 @@
       }
     },
     computed:{
+      ...mapState(['homenav']),
+
       innerBarStyle(){
         return{
           width:`${this.barXWidth}px`,
@@ -103,10 +49,6 @@
       }
     },
     mounted() {
-      //1.请求首页导航的数据
-      this.$store.dispatch('reqHomeNav');
-
-
       this.getBottomBarWidth();
       this.bindEvent();
     },

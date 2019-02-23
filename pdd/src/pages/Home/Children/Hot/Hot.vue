@@ -42,6 +42,10 @@
     mounted() {
       //1.请求轮播图的数据
       this.$store.dispatch('reqHomeCasual');
+      //2.请求首页导航的数据
+      this.$store.dispatch('reqHomeNav');
+      //2.请求首页商品列表数据
+      this.$store.dispatch('getHomeShopList');
     },
     watch:{
       homecasual(){

@@ -10,3 +10,10 @@ export const getHomeCasual=()=>ajax(BASE_URL+'/api/homecasual');
 
 //2.2.请求首页的导航
 export const getHomeNav=()=>ajax(BASE_URL+'/api/homenav');
+
+//2.3.请求首页的商品的数据
+export const getHomeShopList=()=>ajax(BASE_URL+'/api/homeshoplist');
+
+//2.4.请求推荐的商品的数据
+export const getRecommendShopList=()=>ajax(BASE_URL+'/api/recommendshoplist');
+
