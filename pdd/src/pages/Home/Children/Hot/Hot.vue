@@ -45,7 +45,7 @@
       //2.请求首页导航的数据
       this.$store.dispatch('reqHomeNav');
       //2.请求首页商品列表数据
-      this.$store.dispatch('getHomeShopList');
+      this.$store.dispatch('reqHomeShopList');
     },
     watch:{
       homecasual(){

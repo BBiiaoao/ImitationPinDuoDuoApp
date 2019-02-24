@@ -2,13 +2,15 @@ import {
   getHomeCasual,
   getHomeNav,
   getHomeShopList,
-  getRecommendShopList
+  getRecommendShopList,
+  getSearchGoods
 } from "../api";
 import {
   HOME_CASUAL,
   HOME_NAV,
   HOME_SHOP_LIST,
-  RECOMMEND_SHOP_LIST
+  RECOMMEND_SHOP_LIST,
+  SEARCH_GOODS
 } from "./mutation-ytpe";
 
 export default {
@@ -23,13 +25,18 @@ export default {
     commit(HOME_NAV, {homenav: result.message.data})
   },
   //3.获取首页商品列表
-  async getHomeShopList({commit}) {
+  async reqHomeShopList({commit}) {
     const result = await getHomeShopList();
     commit(HOME_SHOP_LIST, {homeshoplist: result.message.goods_list})
   },
-  //3.获取推荐商品列表
-  async getRecommendShopList({commit}) {
+  //4.获取推荐商品列表
+  async reqRecommendShopList({commit}) {
     const result = await getRecommendShopList();
     commit(RECOMMEND_SHOP_LIST, {recommendshoplist: result.message.data})
+  },
+  //5.获取推荐商品列表
+  async reqSearchGoods({commit}) {
+    const result = await getSearchGoods();
+    commit(SEARCH_GOODS, {searchgoods: result.message.data})
   }
 }

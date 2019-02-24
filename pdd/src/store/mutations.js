@@ -2,7 +2,8 @@ import {
   HOME_CASUAL,
   HOME_NAV,
   HOME_SHOP_LIST,
-  RECOMMEND_SHOP_LIST
+  RECOMMEND_SHOP_LIST,
+  SEARCH_GOODS
 } from "./mutation-ytpe";
 
 export default {
@@ -17,5 +18,8 @@ export default {
   },
   [RECOMMEND_SHOP_LIST](state,{recommendshoplist}){
     state.recommendshoplist=recommendshoplist
+  },
+  [SEARCH_GOODS](state,{searchgoods}){
+    state.searchgoods=searchgoods
   }
 }

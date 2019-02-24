@@ -17,3 +17,6 @@ export const getHomeShopList=()=>ajax(BASE_URL+'/api/homeshoplist');
 //2.4.请求推荐的商品的数据
 export const getRecommendShopList=()=>ajax(BASE_URL+'/api/recommendshoplist');
 
+//2.5.请求搜索的列表数据
+export const getSearchGoods=()=>ajax(BASE_URL+'/api/searchgoods');
+
